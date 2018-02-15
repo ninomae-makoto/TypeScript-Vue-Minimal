@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="./dist/build.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div>コンポーネントを使用しない場合</div>
+      <input type="text" v-model="inputValue" v-on:input="inputField()">
+      <div>{{inputValue}}</div>
+    </div>
+  </div>
+
+  <div id="app2">
+    <hello-component/>
+  </div>
+</body>
+
+</html>
