@@ -2,12 +2,16 @@
 <html>
 
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <script src="./dist/build.js"></script>
 </head>
 
 <body>
   <div id="app">
     <div>
+      <el-button type="primary">Primary</el-button>
       <div>コンポーネントを使用しない場合</div>
       <input type="text" v-model="inputValue" v-on:input="inputField()">
       <div>{{inputValue}}</div>

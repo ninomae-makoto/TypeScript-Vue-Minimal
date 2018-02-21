@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 module.exports = {
   entry: './src/index.ts',
@@ -71,6 +72,10 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
+  externals: {
+    "vue": "Vue",
+    'element-ui': 'ElementUI'
+  },
   performance: {
     hints: false
   },
@@ -95,5 +100,9 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })
+  ])
+} else {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new HardSourceWebpackPlugin()
   ])
 }
