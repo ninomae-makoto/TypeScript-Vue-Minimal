@@ -42,8 +42,14 @@ npm install tslint -g
 3. コンパイル ＆ 実行確認
 以下のコマンド
 
+開発用
 ```
-webpack
+webpack --mode development
+```
+
+本番用
+```
+webpack --mode production
 ```
 
 distディレクトリ以下にbuild.jsが作られる。
